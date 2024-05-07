@@ -2,8 +2,7 @@
 const scubaDrivers = ['Antonia', 'Nuru', 'Amari', 'Mo'];
 
 const returnFirstTwoDrivers = function(scubaDrivers){
-    const driver = scubaDrivers.slice(0,2);
-    return driver;
+    return scubaDrivers.slice(0,2);
 }
 
 const returnLastTwoDrivers = function(scubaDrivers){
@@ -13,19 +12,13 @@ const returnLastTwoDrivers = function(scubaDrivers){
 const selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers];
 
 function createFareMultiplier(multiplier){
-    return function(num){
-        return num * multiplier;
+    return function(fare){
+        return fare * multiplier;
     }
 }
 
-function fareDoubler(fare){
-    return createFareMultiplier(2)(fare)
-}
+const fareDoubler = createFareMultiplier(2)
 
-function fareTripler(fare){
-    return createFareMultiplier(3)(fare)
-}
+const fareTripler = createFareMultiplier(3);
 
-function selectDifferentDrivers(scubaDrivers, callback){
-    return callback(scubaDrivers);
-}
+const selectDifferentDrivers = (scubaDrivers, callback) => callback(scubaDrivers); 
